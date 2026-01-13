@@ -18,7 +18,7 @@ resource "aws_iam_role" "lambda_role" {
   })
 }
 
-# 3. Permissions (UPDATED with Marketplace & Bedrock access)
+# 3. Permissions (UPDATED with Inference Profile Access)
 resource "aws_iam_role_policy" "lambda_policy" {
   name = "lambda-bedrock-policy"
   role = aws_iam_role.lambda_role.id
@@ -31,7 +31,9 @@ resource "aws_iam_role_policy" "lambda_policy" {
           "bedrock:RetrieveAndGenerate",
           "bedrock:Retrieve",
           "bedrock:InvokeModel",
-          "bedrock:ListFoundationModels"
+          "bedrock:ListFoundationModels",
+          "bedrock:GetInferenceProfile",   # <-- Added this
+          "bedrock:ListInferenceProfiles"  # <-- Added this
         ]
         Effect   = "Allow"
         Resource = "*"
