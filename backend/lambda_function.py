@@ -29,7 +29,8 @@ def lambda_handler(event, context):
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
                     'knowledgeBaseId': kb_id,
-                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0'
+                    # UPDATED: Using your exact Inference Profile ARN from the Playground
+                    'modelArn': 'arn:aws:bedrock:us-east-1:349020400385:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0'
                 }
             }
         )
