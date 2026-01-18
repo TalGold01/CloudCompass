@@ -34,8 +34,17 @@ resource "aws_bedrockagent_data_source" "s3_docs" {
       bucket_arn = aws_s3_bucket.knowledge_base_docs.arn
     }
   }
-}
 
-output "knowledge_base_id" {
-  value = aws_bedrockagent_knowledge_base.main.id
+  # --- NEW: CHUNKING STRATEGY ---
+  vector_ingestion_configuration {
+    chunking_configuration {
+      chunking_strategy = "FIXED_SIZE"
+      
+      fixed_size_chunking_configuration {
+        max_tokens         = 1024  # Bigger chunks for better context
+        overlap_percentage = 20    # 20% overlap so sentences aren't cut blindly
+      }
+    }
+  }
+  # ------------------------------
 }
