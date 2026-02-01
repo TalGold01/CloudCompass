@@ -83,7 +83,7 @@ cd frontend
 npm install
 npm run dev
 # App will launch at http://localhost:5173
-
+```
 📜 License
 
 MIT
