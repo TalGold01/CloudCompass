@@ -6,7 +6,7 @@
 ![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
 
 ## 📖 Project Overview
-Cloud Compass is a secure, cloud-native Knowledge Assistant that allows enterprises to interact with private documentation using Generative AI. 
+Cloud Compass is a secure, cloud-native Knowledge Assistant that allows enterprises to interact with private documentation using Generative AI.
 
 Unlike standard chatbots, this system leverages a **Retrieval-Augmented Generation (RAG)** pipeline to ground responses in specific source data (PDFs), eliminating hallucinations and providing accurate citations. The entire infrastructure is automated using **Terraform**, ensuring a reproducible, version-controlled environment.
 
@@ -23,7 +23,7 @@ The system follows a **Serverless Microservices** architecture to ensure scalabi
 
 ### Tech Stack
 * **Frontend:** React + Vite (Single Page Application).
-* **Compute:** AWS Lambda (Python 3.12) via Function URL.
+* **Compute:** AWS Lambda (Python 3.11) via Function URL.
 * **GenAI Model:** Amazon Bedrock (Claude 3 Haiku 4.5).
 * **Vector Database:** **Pinecone (Serverless)** — *Managed via Amazon Bedrock Knowledge Base.*
 * **Embeddings:** Amazon Titan Embeddings v2.
@@ -73,7 +73,7 @@ To validate the "serverless scaling" claims, the system includes a programmatic 
 * **Performance Metrics (Enterprise Percentiles):**
   * **P50 (Median):** Sub-2 second retrieval and generation.
   * **P99 (Worst Case):** Gracefully handled without Lambda cold-start timeouts.
-  
+
 ---
 
 ## 🚀 Deployment Guide
@@ -85,10 +85,10 @@ To validate the "serverless scaling" claims, the system includes a programmatic 
 cd infrastructure
 terraform init
 terraform apply
-# Output will provide the Function URL 
+# Output will provide the Function URL
 ```
 ### 2. Run Frontend
-```bash 
+```bash
 cd frontend
 npm install
 npm run dev
