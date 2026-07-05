@@ -71,7 +71,7 @@ To validate the "serverless scaling" claims, the system includes a programmatic 
 * **Methodology:** 20 sequential requests tracking total Time-to-First-Token (TTFT) and retrieval latency.
 * **Secret Management:** The benchmark uses the Boto3 credential chain and environment variables (`BEDROCK_KB_ID`), ensuring zero hardcoded secrets exist in the repository.
 * **Performance Metrics (Enterprise Percentiles):**
-  * **P50 (Median):** Sub-2 second retrieval and generation.
+  * **P50 (Median):** Measured on live deployment via bedrock_benchmark.py
   * **P99 (Worst Case):** Gracefully handled without Lambda cold-start timeouts.
 
 ---
