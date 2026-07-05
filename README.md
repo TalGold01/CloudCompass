@@ -24,7 +24,7 @@ The system follows a **Serverless Microservices** architecture to ensure scalabi
 ### Tech Stack
 * **Frontend:** React + Vite (Single Page Application).
 * **Compute:** AWS Lambda (Python 3.11) via Function URL.
-* **GenAI Model:** Amazon Bedrock (Claude 3 Haiku 4.5).
+* **GenAI Model:** Amazon Bedrock (Claude Haiku 4.5).
 * **Vector Database:** **Pinecone (Serverless)** — *Managed via Amazon Bedrock Knowledge Base.*
 * **Embeddings:** Amazon Titan Embeddings v2.
 * **Storage:** AWS S3 (Document Source & Terraform State).
