@@ -57,7 +57,7 @@ To solve the issue of context loss at page breaks, we implemented a custom chunk
 ### 🐛 Bug 1: IAM Permission "Access Denied"
 * **The Issue:** The Lambda function crashed with an "Access Denied" error when attempting to call Amazon Bedrock, even though basic execution roles were attached.
 * **The Debug:** Inspection of **CloudWatch Logs** revealed the role was missing the specific `bedrock:InvokeModel` action for the Haiku model ARN.
-* **The Fix:** Updated the Terraform IAM policy to explicitly grant `InvokeModel` permissions scoped strictly to the specific Claude 3 Haiku resource.
+* **The Fix:** Updated the Terraform IAM policy to explicitly grant `InvokeModel` permissions scoped strictly to the specific Claude Haiku 4.5 resource.
 
 ### 🐛 Bug 2: Silent Failures (Empty Responses)
 * **The Issue:** The API would occasionally return a 200 OK status but with an empty answer ("I cannot help with that"), even when the answer existed in the PDF.
